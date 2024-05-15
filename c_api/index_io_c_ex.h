@@ -21,6 +21,14 @@
 extern "C" {
 #endif
 
+// skip prefetch phase while searching over the inverted lists
+#define FAISS_IO_FLAG_SKIP_PREFETCH 32
+// the following two macros together decide whether to read the index from an
+// already mmap'd data buffer. it's C equivalent of IO_FLAG_READ_MMAP from index_io.h
+// usage is - FAISS_IO_FLAG_READ_MMAP | FAISS_IO_FLAG_ONDISK_IVF
+#define FAISS_IO_FLAG_READ_MMAP 64
+#define FAISS_IO_FLAG_ONDISK_IVF 0x646f0000
+
 /** Write index to buffer
  */
 int faiss_write_index_buf(const FaissIndex* idx, size_t* buf_size, unsigned char** buf);

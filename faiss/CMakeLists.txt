@@ -232,7 +232,6 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     "-Wno-unused-variable"
     "-Wno-redundant-decls"
     "-Wno-maybe-uninitialized"
-    "-Wno-format"
   )
 endif()
 
